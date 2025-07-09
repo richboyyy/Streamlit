@@ -33,3 +33,25 @@ O app utiliza um tema institucional configurado no arquivo `.streamlit/config.to
 
 ## 📂 Estrutura do Projeto
 
+.
+├── app.py
+├── README.md
+└── .streamlit/
+└── config.toml
+
+
+---
+
+## 🙋‍♂️ Contribuição
+
+Contribuições são bem-vindas! Sugestões de novos serviços ou melhorias visuais podem ser feitas via [Issues](https://github.com/seu-usuario/seu-repositorio/issues) ou Pull Requests.
+
+---
+
+## 🏛️ Sobre a Anvisa
+
+A Agência Nacional de Vigilância Sanitária (Anvisa) é responsável por proteger a saúde da população por meio do controle sanitário de produtos e serviços. A Ouvidoria atua como canal de escuta da sociedade.
+
+---
+
+© 2025 - ANVISA / Ouvidoria
