@@ -33,12 +33,12 @@ O app utiliza um tema institucional configurado no arquivo `.streamlit/config.to
 
 ## 📂 Estrutura do Projeto
 
-.
+```
 ├── app.py
 ├── README.md
 └── .streamlit/
 └── config.toml
-
+```
 
 ---
 
