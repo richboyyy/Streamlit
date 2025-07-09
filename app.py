@@ -1,20 +1,34 @@
 import streamlit as st
 
-st.set_page_config(page_title="Hub de Serviços da Ouvidoria", layout="centered")
+st.set_page_config(
+    page_title="Hub da Ouvidoria - ANVISA",
+    layout="wide",
+    page_icon="📌"
+)
 
-st.title("🔗 Hub de Serviços da Ouvidoria - ANVISA")
-st.markdown("Acesse abaixo os principais serviços da Ouvidoria:")
-
-links = {
-    "📝 Registrar Manifestação (Fala.BR)": "https://falabr.cgu.gov.br/",
-    "📄 Carta de Serviços da Anvisa": "https://www.gov.br/anvisa/pt-br/assuntos/snvs",
-    "🩺 Ouvidoria Geral do SUS": "https://www.gov.br/saude/pt-br/canais-de-atendimento/ouvsus",
-    "📬 Formulário de Contato da Ouvidoria Anvisa": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria",
-    # Adicione mais links conforme necessário
-}
-
-for label, url in links.items():
-    st.link_button(label, url)
+# Cabeçalho com logo
+st.image("https://www.gov.br/anvisa/pt-br/acesso-a-informacao/institucional/identidade-visual/logo-anvisa.png", width=250)
+st.title("🧭 Hub de Serviços da Ouvidoria - ANVISA")
+st.markdown("Bem-vindo! Aqui você encontra acesso rápido aos principais serviços da Ouvidoria.")
 
 st.markdown("---")
-st.info("Este é um canal facilitador de acesso aos principais serviços da Ouvidoria da Anvisa.")
+
+# Layout com colunas
+col1, col2 = st.columns(2)
+
+with col1:
+    st.success("📝 **Registrar Manifestação (Fala.BR)**")
+    st.link_button("Acessar Fala.BR", "https://falabr.cgu.gov.br/")
+
+    st.info("📄 **Carta de Serviços da Anvisa**")
+    st.link_button("Ver Carta de Serviços", "https://www.gov.br/anvisa/pt-br/carta-de-servicos")
+
+with col2:
+    st.warning("🩺 **Ouvidoria Geral do SUS**")
+    st.link_button("Acessar Ouvidoria SUS", "https://www.gov.br/saude/pt-br/assuntos/saude-ouvidoria")
+
+    st.error("📬 **Contato Direto com a Ouvidoria**")
+    st.link_button("Formulário de Contato", "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria")
+
+st.markdown("---")
+st.info("🔔 Este portal foi desenvolvido para facilitar o acesso da população aos canais oficiais de participação e informação.")
