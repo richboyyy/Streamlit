@@ -21,7 +21,7 @@ with col1:
     st.link_button("Acessar Fala.BR", "https://falabr.cgu.gov.br/")
 
     st.info("📄 **Carta de Serviços da Anvisa**")
-    st.link_button("Ver Carta de Serviços", "https://www.gov.br/anvisa/pt-br/carta-de-servicos")
+    st.link_button("Ver Carta de Serviços", "https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade/painel-de-monitoramento-de-servicos-federaisv2")
 
 with col2:
     st.warning("🩺 **Ouvidoria Geral do SUS**")
