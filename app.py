@@ -9,7 +9,7 @@ st.set_page_config(
 # ===== Título e Logo =====
 col1, col2 = st.columns([1, 5])
 with col1:
-    st.image("logo_ouvidoria_anvisa.png", width=160)
+    st.image("logo_ouvidoria_anvisa.png", width=300)
 with col2:
     st.markdown("<h1 style='margin-top: 40px;'>Hub de Serviços da Ouvidoria - ANVISA</h1>", unsafe_allow_html=True)
     st.markdown("Acesse rapidamente os principais canais de participação e atendimento:")
@@ -33,13 +33,13 @@ servicos = [
     {
         "titulo": "Ouvidoria Geral do SUS",
         "descricao": "Acesse o canal nacional de ouvidoria do Sistema Único de Saúde.",
-        "imagem": "falabr.png",
+        "imagem": "ouvidoriasus.png",
         "link": "https://www.gov.br/saude/pt-br/canais-de-atendimento/ouvsus"
     },
     {
         "titulo": "Contato com a Ouvidoria da Anvisa",
         "descricao": "Fale diretamente com a ouvidoria institucional da Anvisa.",
-        "imagem": "falabr.png",
+        "imagem": "logo_ouvidoria_anvisa.png",
         "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria"
     },
 ]
