@@ -39,7 +39,7 @@ servicos = [
     {
         "titulo": "Contato com a Ouvidoria da Anvisa",
         "descricao": "Fale diretamente com a ouvidoria institucional da Anvisa.",
-        "imagem": "logo_ouvidoria_anvisa.png",
+        "imagem": "",
         "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria"
     },
 ]
