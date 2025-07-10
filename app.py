@@ -28,18 +28,18 @@ servicos = [
         "titulo": "Carta de Serviços da Anvisa",
         "descricao": "Conheça os serviços prestados pela Anvisa e seus compromissos de atendimento.",
         "imagem": "https://www.gov.br/anvisa/@@site-logo/anvisa-logo.png",
-        "link": "https://www.gov.br/anvisa/pt-br/carta-de-servicos"
+        "link": "https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade/painel-de-monitoramento-de-servicos-federaisv2"
     },
     {
         "titulo": "Ouvidoria Geral do SUS",
         "descricao": "Acesse o canal nacional de ouvidoria do Sistema Único de Saúde.",
         "imagem": "ouvidoriasus.png",
-        "link": "https://www.gov.br/saude/pt-br/assuntos/saude-ouvidoria"
+        "link": "https://www.gov.br/saude/pt-br/canais-de-atendimento/ouvsus"
     },
     {
         "titulo": "Contato com a Ouvidoria da Anvisa",
         "descricao": "Fale diretamente com a ouvidoria institucional da Anvisa.",
-        "imagem": "https://www.gov.br/anvisa/@@site-logo/anvisa-logo.png",
+        "imagem": "logo_ouvidoria_anvisa.png",
         "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria"
     },
 ]
@@ -50,7 +50,7 @@ for i in range(0, len(servicos), 2):
     for col, servico in zip(cols, servicos[i:i+2]):
         with col:
             with st.container(border=True):
-                st.image(servico["imagem"], use_column_width=True)
+                st.image(servico["imagem"], width=300)
                 st.markdown(f"### {servico['titulo']}")
                 st.markdown(servico["descricao"])
                 st.link_button("Acessar", servico["link"])
