@@ -50,7 +50,7 @@ for i in range(0, len(servicos), 2):
     for col, servico in zip(cols, servicos[i:i+2]):
         with col:
             with st.container(border=True):
-                st.image(servico["imagem"], width=300)
+                st.image(servico["imagem"], width=200)
                 st.markdown(f"### {servico['titulo']}")
                 st.markdown(servico["descricao"])
                 st.link_button("Acessar", servico["link"])
