@@ -9,7 +9,7 @@ st.set_page_config(
 # Imagem de topo (certifique-se de que o arquivo esteja na raiz do repositório)
 st.image("logo_ouvidoria_anvisa.png", width=300)
 
-st.markdown("## 🧭 Hub de Serviços da Ouvidoria - ANVISA")
+st.markdown("## 😁 Hub de Serviços da Ouvidoria - ANVISA")
 st.markdown("Acesse rapidamente os principais canais de participação e atendimento:")
 
 st.markdown("---")
