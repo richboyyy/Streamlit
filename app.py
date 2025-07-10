@@ -27,19 +27,19 @@ servicos = [
     {
         "titulo": "Carta de Serviços da Anvisa",
         "descricao": "Conheça os serviços prestados pela Anvisa e seus compromissos de atendimento.",
-        "imagem": "https://www.gov.br/anvisa/@@site-logo/anvisa-logo.png",
+        "imagem": "falabr.png",
         "link": "https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade/painel-de-monitoramento-de-servicos-federaisv2"
     },
     {
         "titulo": "Ouvidoria Geral do SUS",
         "descricao": "Acesse o canal nacional de ouvidoria do Sistema Único de Saúde.",
-        "imagem": "ouvidoriasus.png",
+        "imagem": "falabr.png",
         "link": "https://www.gov.br/saude/pt-br/canais-de-atendimento/ouvsus"
     },
     {
         "titulo": "Contato com a Ouvidoria da Anvisa",
         "descricao": "Fale diretamente com a ouvidoria institucional da Anvisa.",
-        "imagem": "",
+        "imagem": "falabr.png",
         "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria"
     },
 ]
