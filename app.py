@@ -98,7 +98,7 @@ servicos = [
     {
         "titulo": "Carta de Serviços da Anvisa",
         "descricao": "Conheça os serviços prestados pela Anvisa e seus compromissos de atendimento.",
-        "imagem": "images/Anvisa-Logo-1.png",
+        "imagem": "images/carta_de_servico.png",
         "link": "https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade/painel-de-monitoramento-de-servicos-federaisv2"
     },
     {
@@ -116,13 +116,13 @@ servicos = [
     {
         "titulo": "Painel Resolveu",
         "descricao": "O painel Resolveu? é uma ferramenta que reúne informações sobre manifestações de ouvidoria que a Administração Pública recebe diariamente pela Plataforma Fala.BR",
-        "imagem": "images/consulta_publica.png",
+        "imagem": "images/painel_resolveu.jpeg",
         "link": "https://centralpaineis.cgu.gov.br/visualizar/resolveu"
     },
     {
         "titulo": "Painel Monitoramento",
         "descricao": "Painel de Monitoramento da Agenda Regulatória da ANVISA",
-        "imagem": ".",
+        "imagem": "images/Anvisa-Logo-1.png",
         "link": "https://app.powerbi.com/view?r=eyJrIjoiMDBkZjhjYjQtNDM2YS00MjQ3LTk5Y2YtODNlOGYwZjM3NDhlIiwidCI6ImI2N2FmMjNmLWMzZjMtNGQzNS04MGM3LWI3MDg1ZjVlZGQ4MSJ9"
     }
 ]
