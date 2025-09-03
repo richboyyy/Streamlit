@@ -17,52 +17,45 @@ def img_to_base64(image_path: Path) -> str:
 # Bloco de estilo CSS
 st.markdown("""
     <style>
-        /* ================================================================
-        PALETA DE CORES EDITÁVEL
-        ================================================================
-        */
         :root {
             --cor-primaria: #005BA1;
             --cor-fundo-card: #E8F0FE;
             --cor-fundo-pagina: #F0F2F6;
         }
-        /* ================================================================ */
 
-        /* Aplica a cor de fundo à página */
         [data-testid="stAppViewContainer"] {
+            padding-top: 0rem !important;
             background-color: var(--cor-fundo-pagina);
         }
-        
+
         [data-testid="stHeader"] {
             background-color: rgba(0,0,0,0);
         }
 
-        /* Estilo dos cards de serviço */
         .card {
-            /* Aparência */
             border: 2px solid var(--cor-primaria);
             border-radius: 10px;
             padding: 20px;
             background-color: var(--cor-fundo-card);
-            
-            /* Layout Interno */
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
-            /* --- CONTROLE DE TAMANHO E FORMATO --- */
-            aspect-ratio: 1 / 1;  /* Mantém o card quadrado */
-            max-width: 350px;     /* Define a largura máxima do card */
-            margin: auto;         /* Centraliza o card na sua coluna */
+
+            aspect-ratio: 1 / 1;
+            max-width: 350px;
+            margin: auto;
         }
+
         .card-content {
-            flex-grow: 1; 
+            flex-grow: 1;
             text-align: center;
         }
+
         .card img {
-            height: 50%; 
-            max-height: 150px;
+            height: 100%;
+            max-height: 180px;
             width: auto;
             object-fit: contain;
             border-radius: 8px;
@@ -70,33 +63,27 @@ st.markdown("""
             transition: transform 0.2s;
         }
 
-        /* Efeito de zoom na imagem */
         .card a:hover img {
             transform: scale(1.05);
         }
 
-        /* Estilo para a logo específica */
-        .logo-ouvidoria-anvisa-card {
-            width: 130px !important; 
+        .card img.logo-ouvidoria-anvisa-card {
+            max-height: 200px !important;
+            width: auto !important;
             height: auto !important;
+            object-fit: contain;
+            margin-bottom: 15px;
         }
     </style>
 """, unsafe_allow_html=True)
 
-
-# ===== Título e Logo =====
-col1, col2 = st.columns([1, 5])
-
-with col1:
-    logo_path = "images/logo_ouvidoria_anvisa.png" 
-    if Path(logo_path).is_file():
-        st.image(logo_path, width=150)
-    else:
-        st.warning(f"Logo não encontrada em: {logo_path}")
-
-with col2:
-    st.markdown("<h1 style='margin-top: 10px;'>Hub de Serviços da Ouvidoria - ANVISA</h1>", unsafe_allow_html=True)
-    st.markdown("Acesse rapidamente os principais canais de participação e atendimento:")
+# ===== Título Centralizado =====
+st.markdown("""
+    <div style='text-align: center; margin-top: -30px;'>
+        <h1 style='margin: 0;'>Hub de Serviços da Ouvidoria - ANVISA</h1>
+        <p style='margin-top: 0;'>Acesse rapidamente os principais canais de participação e atendimento:</p>
+    </div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 
@@ -112,42 +99,52 @@ servicos = [
         "titulo": "Carta de Serviços da Anvisa",
         "descricao": "Conheça os serviços prestados pela Anvisa e seus compromissos de atendimento.",
         "imagem": "images/Anvisa-Logo-1.png",
-        "link": "https://www.gov.br/anvisa/pt-br/carta-de-servicos"
+        "link": "https://www.gov.br/governodigital/pt-br/estrategias-e-governanca-digital/transformacao-digital/central-de-qualidade/painel-de-monitoramento-de-servicos-federaisv2"
     },
     {
         "titulo": "Ouvidoria Geral do SUS",
         "descricao": "Acesse o canal nacional de ouvidoria do Sistema Único de Saúde.",
         "imagem": "images/ouvidoriasus.png",
-        "link": "https://www.gov.br/saude/pt-br/assuntos/saude-ouvidoria"
+        "link": "https://www.gov.br/saude/pt-br/canais-de-atendimento/ouvsus"
     },
     {
         "titulo": "Contato com a Ouvidoria da Anvisa",
         "descricao": "Fale diretamente com a ouvidoria institucional da Anvisa.",
         "imagem": "images/logo_ouvidoria_anvisa.png",
-        "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria"
+        "link": "https://www.gov.br/anvisa/pt-br/canais_atendimento/ouvidoria/fale-ouvidoria"
     },
+    {
+        "titulo": "Painel Resolveu",
+        "descricao": "O painel Resolveu? é uma ferramenta que reúne informações sobre manifestações de ouvidoria que a Administração Pública recebe diariamente pela Plataforma Fala.BR",
+        "imagem": "images/consulta_publica.png",
+        "link": "https://centralpaineis.cgu.gov.br/visualizar/resolveu"
+    },
+    {
+        "titulo": "Painel Monitoramento",
+        "descricao": "Painel de Monitoramento da Agenda Regulatória da ANVISA",
+        "imagem": ".",
+        "link": "https://app.powerbi.com/view?r=eyJrIjoiMDBkZjhjYjQtNDM2YS00MjQ3LTk5Y2YtODNlOGYwZjM3NDhlIiwidCI6ImI2N2FmMjNmLWMzZjMtNGQzNS04MGM3LWI3MDg1ZjVlZGQ4MSJ9"
+    }
 ]
 
-# ===== Layout dos Cards (st.columns) =====
-for i in range(0, len(servicos), 2):
+# ===== Layout dos Cards (3 por linha) =====
+for i in range(0, len(servicos), 3):
+    cols = st.columns(3, gap="small")
     
-    cols = st.columns(2, gap="large") 
-    
-    for col, servico in zip(cols, servicos[i:i+2]):
+    for col, servico in zip(cols, servicos[i:i+3]):
         with col:
             img_path = Path(servico["imagem"])
             if img_path.is_file():
                 img_base64 = img_to_base64(img_path)
                 img_src = f"data:image/png;base64,{img_base64}"
             else:
-                img_src = "" 
+                img_src = ""
                 st.warning(f"Imagem não encontrada em: {img_path}")
 
             imagem_classe = ""
             if servico["titulo"] == "Contato com a Ouvidoria da Anvisa":
                 imagem_classe = "logo-ouvidoria-anvisa-card"
             
-            # Renderiza cada card em sua própria coluna
             st.markdown(f"""
                 <div class='card'>
                     <a href="{servico["link"]}" target="_blank">
@@ -159,9 +156,8 @@ for i in range(0, len(servicos), 2):
                     </div>
                 </div>
             """, unsafe_allow_html=True)
-            
-    # Adiciona um espaço vertical entre as linhas
-    st.write("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+
+    st.write("<div style='margin-bottom: 10px;'></div>", unsafe_allow_html=True)
 
 # ===== Rodapé =====
 st.markdown("---")
