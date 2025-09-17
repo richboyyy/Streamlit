@@ -20,7 +20,7 @@ st.markdown("""
         :root {
             --cor-primaria: #005BA1;
             --cor-fundo-card: #E8F0FE;
-            --cor-fundo-pagina: #F0F2F6;
+            --cor-fundo-pagina: #f0f2f6 ;
         }
 
         [data-testid="stAppViewContainer"] {
@@ -41,9 +41,9 @@ st.markdown("""
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
 
-            aspect-ratio: 1 / 1;
+            height: 400px; /* Define uma altura fixa para os cards */
             max-width: 350px;
             margin: auto;
         }
@@ -51,10 +51,26 @@ st.markdown("""
         .card-content {
             flex-grow: 1;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Garante que o conteúdo interno seja distribuído */
+        }
+
+        .card-content h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            min-height: 50px; /* Define uma altura mínima para os títulos */
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin: 0;
+            min-height: 60px; /* Define uma altura mínima para as descrições */
         }
 
         .card img {
-            height: 100%;
+            height: auto;
             max-height: 180px;
             width: auto;
             object-fit: contain;
@@ -73,6 +89,10 @@ st.markdown("""
             height: auto !important;
             object-fit: contain;
             margin-bottom: 15px;
+        }
+
+        .card {
+            margin: 5px auto; /* Reduz a margem externa dos cards */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -129,7 +149,7 @@ servicos = [
 
 # ===== Layout dos Cards (3 por linha) =====
 for i in range(0, len(servicos), 3):
-    cols = st.columns(3, gap="small")
+    cols = st.columns(3, gap="small")  # Reduz o gap entre as colunas
     
     for col, servico in zip(cols, servicos[i:i+3]):
         with col:
@@ -157,7 +177,7 @@ for i in range(0, len(servicos), 3):
                 </div>
             """, unsafe_allow_html=True)
 
-    st.write("<div style='margin-bottom: 10px;'></div>", unsafe_allow_html=True)
+    st.write("<div style='margin-bottom: 5px;'></div>", unsafe_allow_html=True)  # Reduz o espaço entre linhas
 
 # ===== Rodapé =====
 st.markdown("---")
